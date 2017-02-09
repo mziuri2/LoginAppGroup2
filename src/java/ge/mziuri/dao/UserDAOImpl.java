@@ -37,6 +37,8 @@ public class UserDAOImpl implements UserDAO {
         try {
             String sql = "SELECT * FROM system_user WHERE username = ? AND password = ?";
             pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, username);
+            pstmt.setString(2, password);
             ResultSet rs = pstmt.executeQuery();
             if (rs.next()) {
                 String firstname = rs.getString("firstname");
