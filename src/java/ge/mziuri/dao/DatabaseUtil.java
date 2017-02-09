@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 public class DatabaseUtil {
     
-    public static final String databaseURL = "jdbc:postgresql://localhost:5432/postgres";
+    public static final String databaseURL = "jdbc:postgresql://localhost:5432/login_app";
     
     public static final String username = "postgres";
     
@@ -24,7 +24,7 @@ public class DatabaseUtil {
         return con;
     }
     
-    public void closeConnection(Connection con) {
+    public static void closeConnection(Connection con) {
         try {
             con.close();
         } catch (SQLException ex) {
