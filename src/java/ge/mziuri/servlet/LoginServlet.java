@@ -22,7 +22,7 @@ public class LoginServlet extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         UserDAO userDAO = new UserDAOImpl();
-        User user = userDAO.getUser(username, password);
+        User user = userDAO.getUser(username, Integer.toString(password.hashCode()));
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
         PrintWriter pw = response.getWriter();
